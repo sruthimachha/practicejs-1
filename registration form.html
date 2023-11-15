@@ -1,0 +1,151 @@
+<html>
+  <body>
+    <style>
+      body{
+        background-image:url("https://img.freepik.com/premium-photo/abstract-background-template-graphic-design-suitable-social-media-promos-banner-ads-posters_7954-5455.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+      form {
+      
+        text-align: center;
+        padding:"1px";
+        /* padding: 140px 110px 120px 100px; */
+        /* border-top: "40px";
+        border-left: "20px"; */
+        font-style: normal;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+          
+          
+      }
+    </style>
+    <center>
+      <h1>Registration form</h1>
+    </center>
+    <form>
+      <label for="username">Username:</label><br>
+      <input type="text" id="username" name="username" class=""/><br>
+      <div style="display: none">valid #9989;</div>
+      <span style="display: none">username should have 10 characters and start with n</span>
+      <label for="pswrd"> Password:</label><br/>
+      <input type="password" name="" id="password"/><br>
+      <div style="display: none">password must have 8 characters</div>
+      <label for="password">Confirm password:</label><br>
+      <input type="password" name="" id="confirm password"/><br>
+      <pre style="display: none;">valid &#9989;</pre>
+        <p style="display: none;">Enter the correct password &#10060;</p>
+      <label for="email">Email ID:</label><br/>
+      <input type="email" id="email" name="email"/><br>
+      <h5 style="display:none">valid</h5>
+      <h6 style="display:none">please enter valid emailid</h6>
+      <label for="birth">Date of birth:</label><br />
+      <input type="date"id="birth" name="birth" /><br>
+      <label for="phone no">Mobile number:</label><br>
+      <input id="phone"type="tel" name="phone" /><br>
+      <h7 style="display:none">valid &#9989;</h7>
+      <h8 style="display:none">please enter 10 digit mobile number starting with 9,8,7,6 &#10060;</h8><br>
+      <button type="submit" class="registration">Register</button>
+      <button type="submit" class="reset">Reset</button>
+    </form>
+
+    <script>
+
+                    let z=document.forms[0];
+                    console.log(z);
+                    var arr=[];
+                    z.addEventListener("submit",function(event){
+                        event.preventDefault()
+                        var username=event.target[0].value;
+                        var password=event.target[1].value;
+                        var confirmpassword=event.target[2].value;
+                        var emailid=event.target[3].value;
+                        var dateofbirth=event.target[4].value;
+                        var phonenumber=event.target[5].value;
+                
+
+      if(username.length==10 && username[0]=="n"){
+                            event.target[0].style.border="2px solid green";
+                            let b=document.querySelector("span");
+                             b.style.display="none";
+
+         if(password===confirmpassword){
+                                event.target[1].style.border="2px solid black";
+                                event.target[2].style.border="2px solid black";
+                                let b=document.querySelector("span");
+                                b.style.display="none";
+
+             if(emailid===username+"@gmail.com"){
+                //           let e=document.querySelector("h5");
+                //           e.style.display="block";
+                //            e.style.color="green";
+                            event.target[3].style.border="2px solid green";
+                           let f=document.querySelector("h6");
+                         f.style.display="none";
+
+
+                    if((phonenumber.length==10) && ((phonenumber[0]==9||phonenumber[0]==8||phonenumber[0]==7||phonenumber[0]==6))){
+                // let g=document.querySelector("h7");
+                //     g.style.display="block";
+                //     g.style.color="green";
+                    event.target[5].style.border="2px solid green";
+                    let h=document.querySelector("h8");
+                    h.style.display="none";
+                    window.open("./login.html","_blank");
+                        
+                    }
+                    else{
+                  let h=document.querySelector("h8");
+                  h.style.display="block";
+                  h.style.color="red";
+                  event.target[5].style.border="2px solid blue";
+                  let g=document.querySelector("h7");
+                  g.style.display="none";
+            }
+        }
+            else{
+                let f=document.querySelector("h6");
+                f.style.display="block";
+                f.style.color="red";
+                event.target[3].style.border="2px solid blue";
+                let e=document.querySelector("h5");
+                e.style.display="none";
+            }
+    }
+         else{
+                    let d=document.querySelector("p");
+            d.style.display="block";
+            d.style.color="red";
+            event.target[2].style.border="2px solid red";
+            let c=document.querySelector("pre");
+                    c.style.display="none";
+                }
+            }
+    else{
+            let b=document.querySelector("span");
+            b.style.display="block";
+            b.style.color="red";
+            event.target[0].style.border="2px solid red";
+            let a=document.querySelector("div");
+                    a.style.display="none";
+                }
+                let obj={
+                    username:username,
+                    password:password,
+                    confirmpassword:confirmpassword,
+                    email:emailid,
+                    dateofbirth:dateofbirth,
+                    mobilenumber:phonenumber
+
+                }
+
+            console.log(obj);
+
+            arr.push(obj);
+            console.log(arr);
+            localStorage.setItem("array",JSON.stringify(arr));
+
+
+              });
+</script>
+  </body>
+</html>

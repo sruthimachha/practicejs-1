@@ -1,0 +1,96 @@
+<html>
+  <body>
+    <script>
+
+        //even or add by using promises
+
+             function even(num){
+              return new Promise((resolve,reject)=>{
+                  if(num%2==0){
+                      resolve(`this number ${num} is even`);
+                  }
+                  else{
+                  reject(`this number ${num} is odd`);
+                  }
+
+              });
+             }
+             even(6).then((val)=>{
+             console.log(val);
+             })
+             .catch((err)=>{
+              console.log(err);
+             });
+             even(3).then((val)=>{
+            console.log(val);
+            })
+            .catch((err)=>{
+            console.log(err);
+             });
+             //week days using promises
+
+             function days(a){
+              return new Promise((resolve,reject)=>{
+                  switch(a){
+                      case 1:resolve(`Monday`);
+                      break;
+                      case 2:resolve(`Tuesday`);
+                      break;
+                      case 3:resolve(`wednesday`);
+                      break;
+                      case 4:resolve(`Thursday`);
+                      break;
+                      case 5:resolve(`Friday`);
+                      break;
+                      case 6:resolve(`saturday`);
+                      break;
+                      case 7:resolve(`Sunday`);
+                     break;
+            }
+        });
+        }
+        days(1).then((val)=>{
+            console.log(val);
+        })
+        .catch((err)=>{
+            console.log(err);
+        });
+        days(2).then((val)=>{
+            console.log(val);
+        })
+        .catch((err)=>{
+            console.log(err);
+        });
+        days(3).then((val)=>{
+           console.log(val);
+         })
+         .catch((err)=>{
+            console.log(err);
+         });
+         days(4).then((val)=>{
+         console.log(val);
+         })
+         .catch((err)=>{
+            console.log(err);
+         });
+         days(5).then((val)=>{
+            console.log(val);
+         })
+         .catch((err)=>{
+            console.log(err);
+         });
+         days(6).then((val)=>{
+            console.log(val);
+         })
+         .catch((err)=>{
+            console.log(err);
+         });
+         days(7).then((val)=>{
+            console.log(val);
+         })
+         .catch((err)=>{
+            console.log(err);
+         });
+    </script>
+  </body>
+</html>

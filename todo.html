@@ -1,0 +1,142 @@
+<html>
+    <head>    
+      <style>    
+        body{
+            background-image: url("https://imageio.forbes.com/specials-images/dam/imageserve/1092571024/960x0.jpg?height=474&width=711&fit=bounds");
+            background-size:cover;
+            background-repeat: no-repeat;
+         }         
+     h1{
+        text-align: center;
+        
+       
+     }
+     #divv{
+        position: relative;
+        background-color:rgb(231, 96, 231);
+        top: 5px;
+        width: 530px;
+        left: 270px;
+        height: 50px;
+        margin: 50px;
+        border-radius: 30px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     }
+     #first{
+        position: relative;
+        padding: 12px;
+        margin: 30px;
+        text-align: center;
+        background-color:rgba(212, 77, 145, 0.726);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      
+        border: 2px solid rgb(109, 109, 226);
+      /*  height: 300px;*/
+        border-radius: 20px;
+        width: 500px;
+        left: 300px;
+     }
+     .input:focus{
+        outline: none;
+      border-color: rgba(87, 109, 197, 0.676);
+        
+     }
+     .btn{
+        width: 90px;
+        height: 30px;
+        position: relative;
+        left: 28px;
+        border-radius: 25px;
+
+
+     }
+     #input{
+        width: 300px;
+        height: 30px;
+        
+     }
+     
+      </style>
+    </head>
+    <body>
+      
+        <div id="divv">
+        <h1>To Do List</h1>
+    </div>
+        <div id="first">
+            <input type="text" id="input" placeholder="type anything here">
+            <button id="btn">To Do</button>
+            <ul id="ul" style="list-style-type: none;"><H2></H2></ul>
+        </div>
+        <ul id="todolist"></ul>
+      </div>
+      <h1 id="getting"></h1>
+        <script>
+
+        
+
+            let btn1=document.getElementById("btn");
+             btn1.addEventListener("click",()=>{
+             if(input.value===""){
+                alert("You must write something");
+
+             }else{
+                let one=document.getElementById("ul");
+               
+                let three=document.createElement("li");
+                three.innerHTML=input.value;
+                one.appendChild(three);
+                three.style.position="relative";
+                three.style.right="100px";
+                
+                three.style.fontSize="20px";
+               
+                let btn2=document.createElement("button");
+               
+              
+                btn2.style.position="relative";
+                btn2.style.width="80px";
+                btn2.style.height="30px";
+                btn2.style.borderRadius="25px";
+                btn2.style.left="140px"
+                btn2.style.borderColor="green";
+               
+                btn2.style.color="green";
+                btn2.innerText="Finish";
+                three.appendChild(btn2);
+                btn2.addEventListener("click",()=>{
+                three.style.textDecoration="line-through"
+                   
+                 });
+                let btn3=document.createElement("button");
+                btn3.innerText="Delete";
+                three.appendChild(btn3);
+                btn3.style.position="relative";
+                btn3.style.width="80px";
+                btn3.style.height="30px";
+                btn3.style.left="180px";
+                btn3.style.borderRadius="25px";
+                btn3.style.borderColor="red";
+               
+                btn3.style.color="red";
+               
+              
+                btn3.addEventListener("click",()=>{
+                three.remove();
+                
+                btn3.style.margin="8px";
+               })
+               
+                 var d=document.getElementById("input");
+                 d.value="";
+               
+
+          
+
+             }
+            })
+
+            
+        </script>
+    </body>
+</html>
